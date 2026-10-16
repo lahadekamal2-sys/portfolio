@@ -1,0 +1,38 @@
+body {
+    background-color: #000000;
+    color: #e6edf3;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: #2f81f7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header p {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap; 
+}
+
+header p a {
+    color: #8b949e;
+    text-decoration: none;
+}
+
+header p a:hover {
+    color: #ffffff;
+}
