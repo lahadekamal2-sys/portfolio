@@ -1,88 +1,141 @@
-body {
-  background-color: #0b0f19; 
-  color: #e2e8f0;            
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  max-width: auto; 
-  margin: 0 auto;
-  padding: 20px;    
+:root {
+  --bg: #0b0f19;
+  --card: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #22c55e;
 }
 
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a { color: var(--accent); }
+
 .card, .hero-card {
-  background: rgba(255, 255, 255, 0.03); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;                      
-  padding: 32px;                         
-  margin-bottom: 32px;                   
-  transition: transform 0.2s ease, border-color 0.2s ease; 
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: #07bb55;
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.nav-header:hover { transform: none; }
+
+.nav-header img { display: block; }
+
+.nav-header nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-header a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-header a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 
 .titre-moderne {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  color: #3b82f6; 
-  letter-spacing: 1px; 
-  margin-bottom: 10px;
+  color: var(--text);
+  letter-spacing: 1px;
+  margin: 0 0 10px;
 }
 
-h2{
-  color: #b8e786;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.hero-card h3 {
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary { background: var(--accent); color: #04110a; }
+.btn-secondary { border: 1px solid var(--accent); color: var(--accent); }
+
+h2 {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
   margin-top: 0;
 }
 
-
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
 
 .alignement-icones {
-  display: flex;            
-  gap: 24px;                
-  justify-content: center;  
-  align-items: center;      
-  margin-top: 16px;        
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
 }
 
+.alignement-icones img { transition: transform 0.2s ease; }
+.alignement-icones a:hover img { transform: scale(1.15); }
 
-.alignement-icones img {
-  transition: transform 0.2s ease;
-}
-
-.alignement-icones img:hover {
-    transform: scale(1.1); 
-}
-
-
-.nav-header {
-
-  justify-content: space-around; 
-  align-items: center;          
-  padding: 20px;
-}
-
-.nav-header a {
-  color: #00e5ff;           
-  font-weight: 900;        
-  text-transform: uppercase; 
-  font-size: 1.1rem;
-  letter-spacing: 1px;      
-  transition: color 0.2s ease, transform 0.2s ease; 
-}
-
-
-.nav-header a:hover {
-  color: #c7d50a;            
-  transform: scale(1.1);     
-}
-
-
-
-footer {     
+footer {
   text-align: center;
-  
+  color: var(--muted);
+ 
+}
+
+footer.card:hover { transform: none; border-color: var(--border); }
+
+@media (max-width: 640px) {
+  .nav-header { flex-direction: column; gap: 12px; position: static; }
+  .nav-header nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .titre-moderne { font-size: 1.6rem; }
+  .card, .hero-card { padding: 22px; }
 }
