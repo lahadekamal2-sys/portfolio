@@ -1,38 +1,88 @@
 body {
-    background-color: #000000;
-    color: #e6edf3;
-    font-family: system-ui, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0 16px;
-    box-sizing: border-box;
+  background-color: #0b0f19; 
+  color: #e2e8f0;            
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  max-width: auto; 
+  margin: 0 auto;
+  padding: 20px;    
 }
 
-h1, h2, h3 {
-    color: #ffffff;
+.card, .hero-card {
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;                      
+  padding: 32px;                         
+  margin-bottom: 32px;                   
+  transition: transform 0.2s ease, border-color 0.2s ease; 
 }
 
-a {
-    color: #2f81f7;
-    text-decoration: none;
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #07bb55;
 }
 
-a:hover {
-    text-decoration: underline;
+
+.titre-moderne {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #3b82f6; 
+  letter-spacing: 1px; 
+  margin-bottom: 10px;
 }
 
-header p {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap; 
+h2{
+  color: #b8e786;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  margin-top: 0;
 }
 
-header p a {
-    color: #8b949e;
-    text-decoration: none;
+
+
+.alignement-icones {
+  display: flex;            
+  gap: 24px;                
+  justify-content: center;  
+  align-items: center;      
+  margin-top: 16px;        
 }
 
-header p a:hover {
-    color: #ffffff;
+
+.alignement-icones img {
+  transition: transform 0.2s ease;
+}
+
+.alignement-icones img:hover {
+    transform: scale(1.1); 
+}
+
+
+.nav-header {
+
+  justify-content: space-around; 
+  align-items: center;          
+  padding: 20px;
+}
+
+.nav-header a {
+  color: #00e5ff;           
+  font-weight: 900;        
+  text-transform: uppercase; 
+  font-size: 1.1rem;
+  letter-spacing: 1px;      
+  transition: color 0.2s ease, transform 0.2s ease; 
+}
+
+
+.nav-header a:hover {
+  color: #c7d50a;            
+  transform: scale(1.1);     
+}
+
+
+
+footer {     
+  text-align: center;
+  
 }
